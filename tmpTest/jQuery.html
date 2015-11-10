@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+ <head>
+   <meta charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            var name = $('#name');
+            var greeting = $('#greeting');
+ 
+            function update(){
+                greeting.text('안녕하세요, ' + name.val() + ' !!!');
+            }
+            update();
+            name.bind('keydown', function(){
+                setTimeout(update,0);
+            });
+        });
+    </script>
+ </head>
+ 
+ <body>
+    <input id="name" value="">
+    <p id="greeting"></p>
+ </body>
+</html>

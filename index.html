@@ -1,0 +1,270 @@
+﻿<!DOCTYPE html><!-- $Id: index.html 23867 2015-09-14 01:01:26Z 1070356 $ -->
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>HTML5, jQuery, Ajax</title>
+  <link rel="stylesheet" href="jquery-ui.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="jquery-1.11.3.min.js"></script>
+  <script src="jquery-ui.min.js"></script>
+  <script src="index.js"></script>
+</head>
+<body>
+  <h1>HTML5, jQuery, Ajax</h1>
+  <div id="tabs">
+    <ul>
+      <li><a href="#tab-1">설치</a></li>
+      <li><a href="#tab-2">설명</a></li>
+    </ul>
+
+    <div id="tab-1">
+      <pre>
+1. xampp 설치 파일을 내려받아 D: 드라이브에 설치한다:
+   http://sourceforge.net/projects/xampp/files/latest/download
+  (Windows 보안 경고 창이 뜨면 [액세스 허용] 버튼을 누른다.)
+
+2. XAMPP Control Panel에서 MySQL [Config] 버튼을 누르고 my.ini를 클릭하여 다음과 같이 수정한다.
+     .   .   .
+
+     [client] 
+     # password       = your_password 
+     port            = 3306 
+     socket          = "D:/xampp/mysql/mysql.sock"
+     default-character-set=utf8
+     .   .   .
+
+     ## UTF 8 Settings
+     init-connect=SET NAMES utf8
+     collation_server=utf8_unicode_ci
+     character_set_server=utf8
+     skip-character-set-client-handshake
+     character_sets-dir="D:/xampp/mysql/share/charsets"
+
+     [mysqldump]
+     quick
+     max_allowed_packet = 16M
+     default-character-set=utf8
+
+     [mysql]
+     no-auto-rehash
+     # Remove the next comment character if you are not familiar with SQL
+     #safe-updates
+     default-character-set=utf8 
+     .   .   .
+
+3. ajax.zip 파일을 풀어서 ajax 폴더를 D:\xampp\htdocs 폴더에 넣는다.
+
+4. XAMPP Control Panel에서 MySQL [Start] 버튼과 MySQL [Admin] 버튼을 누른다.
+  (Windows 보안 경고 창이 뜨면 [액세스 허용] 버튼을 누른다.)
+
+5. phpMyAdmin 사용자 탭을 클릭하고 사용자를 추가한다:
+   5-1. 사용자 추가를 클릭하고 다음과 같이 넣는다:
+        사용자명: scott
+            Host: localhost     -- 로컬 선택
+            암호: tiger
+          재입력: tiger
+
+   5-2. 전체적 권한 [v] 모두체크
+   5-3. (실행)을 클릭한다.
+
+6. phpMyAdmin 가져오기 탭을 클릭하고 데이터베이스를 만든다:
+   6-1. 업로드 파일:에 D:\xampp\htdocs\ajax\ajax.sql을 넣는다.
+   6-2. (실행)을 클릭한다.
+
+7. http://localhost/ajax에서 다음과 같이 테스트한다:
+   7-1. [들어가기]
+        아이디: a, 이름: 홍길동, 이메일: a@abc.com, 비밀번호: aaaa [확인]
+
+   7-2. [나가기] [들어가기]
+        아이디: b, 이름: 임꺽정, 이메일: b@abc.com, 비밀번호: bbbb [확인]
+
+   7-3. [임꺽정] 아이디: a [확인] 아이디: 임 [확인] [나가기]
+
+   7-4. [들어가기] 아이디: 임, 비밀번호: aaaa [확인] [예]
+        D:\xampp\htdocs\ajax\b@abc.com 파일에서 비밀번호를 받아 넣고 [확인]
+
+   7-5. [임꺽정] 새 비밀번호: aaaa [확인]
+
+8. phpMyAdmin에서 [+] ajax - users를 클릭하여 데이터를 확인한다.
+
+
+________________________________________
+(*) jQuery, jQuery UI 내려받기:
+
+    -- http://code.jquery.com/jquery-1.11.3.min.js
+
+    -- http://jqueryui.com/download/ Download Builder에서 다음 옵션 선택: 
+       Component [ ] Toggle All
+         Widgets [v] Dialog
+                 [v] Tabs
+                 [v] Tooltip
+           Theme     Smoothness
+      </pre>
+    </div>
+    <div id="tab-2">
+      <pre>
+ㅇ HTML5
+
+   &lt;!DOCTYPE html&gt;
+   &lt;html lang="ko"&gt;
+
+   &lt;head&gt;
+     &lt;meta charset="utf-8"&gt;
+     &lt;title&gt; . . . &lt;/title&gt;
+     &lt;link rel="stylesheet" href=" . . . "&gt;
+     &lt;script src=" . . . "&gt;&lt;/script&gt;
+   &lt;/head&gt;
+
+   &lt;body&gt;
+     .   .   .
+
+   &lt;/body&gt;
+
+   &lt;/html&gt;
+
+   1. Tags
+   
+      &lt;div&gt; &lt;span&gt;
+      &lt;h1&gt; ... &lt;h6&gt;
+      &lt;p&gt; &lt;br&gt; &lt;b&gt; &lt;i&gt; &lt;small&gt;
+      &lt;ul&gt; &lt;ol&gt; &lt;li&gt;
+      &lt;a&gt; 
+      &lt;table&gt; &lt;th&gt; &lt;tr&gt; &lt;td&gt;
+      &lt;form&gt; &lt;input&gt; &lt;select&gt;
+      &lt;img&gt; &lt;audio&gt; &lt;video&gt; &lt;canvas&gt;
+      &lt;!--...--&gt;
+   
+   2. Attributes
+      id="아이디" class="클래스" . . .
+
+   3. Semantic Elements
+      &lt;header&gt; &lt;footer&gt; &lt;nav&gt; &lt;section&gt; &lt;article&gt; &lt;aside&gt; . . .
+
+   4. Validation  -- element.checkValidity()
+      type="email", type="url", type="number"
+      required, minlength="4", min="1", max="5"
+
+      .   .   .
+
+   http://onlinevideolecture.com/ebooks/?subject=HTML5
+
+   
+ㅇ CSS
+
+   selector { property:value; . . . }
+
+   1. Selectors
+      tag .class #id
+      [attr] [attr=value] [attr*=value] [attr^=value] [attr$=value]
+      :active :checked :disabled :enabled :empty :required :focus :hover :not(selector)
+
+      Selector Groups:    (or) h1, #banner
+                         (and) input:focus
+               inside: (space) div   .news
+                child:         div > .news
+                after:         div + p
+
+   2. Properties
+      margin: 5px 3px 4px 3px;   /* top right bottom left */
+      border: 1px solid red;     /* width style color */
+
+      .   .   .
+
+   http://onlinevideolecture.com/ebooks/?subject=CSS
+
+
+ㅇ JavaScript
+
+   1. Types
+      Numbers, Strings, Functions, Objects, Arrays,
+   
+   2. Constants
+      12, 12.3, "string", function() {...}, { a: 3, b: "aa"}, [10, 20, 30]
+   
+   3. Variables
+      global scope, function scope
+   
+   4. Boolean Values
+      undefined, null, 0, -0, NaN, ""는 false, 그밖에 모두 true.
+
+      .   .   .
+
+   http://onlinevideolecture.com/ebooks/?subject=JavaScript
+
+
+ㅇ jQuery = $
+
+   $(function() {
+      .   .   .
+
+   });
+
+   $("selector")  -- 선택된 HTML 요소들의 jQuery 배열
+   $(this)        -- this 요소의 jQuery 배열
+
+   $("selector").method1().method2();   -- Method chaining
+
+      .   .   .
+
+   http://onlinevideolecture.com/ebooks/?subject=jQuery
+
+
+ㅇ Ajax  -- 서버 호출
+
+          서버로 보냄:   name=홍길동&amp;age=15
+    
+        서버에서 받음:   홍길동,15                     -- 텍스트
+                         {"name":"홍길동","age":15}    -- JSON
+
+   $.post(url, input-data, function(output-data) {
+      .   .   .
+   });
+    
+   $.post(url, input-data, function(output-data) {
+      .   .   .
+   }, "ajax").fail(function(xhr) {    // xhr = XMLHttpRequest 객체
+      .   .   .
+   });    
+
+      .   .   .
+
+   http://json.org   
+      </pre>
+    </div>
+
+    <button id="enter" class="ui-widget">들어가기</button>
+    <div id="exit_div">
+      <button id="name_button" class="ui-widget"></button>
+      <button id="exit" class="ui-widget">나가기</button>
+    </div>
+  </div>
+
+  <div id="user">
+    <label>아이디:</label>
+    <input type="text" name="nick" id="nick" required
+                      class="text ui-widget-content ui-corner-all">
+    <div id="signin">
+      <label>비밀번호:</label>
+      <input type="password" name="pass" id="pass" required
+                        class="text ui-widget-content ui-corner-all">
+    </div>
+    <div id="signup">
+      <label>이름:</label>
+      <input type="text" name="name" id="name" required
+                        class="text ui-widget-content ui-corner-all"><br>
+      <label>이메일:</label>
+      <input type="email" name="mail" id="mail" required
+                        class="text ui-widget-content ui-corner-all"><br>
+      <label>새 비밀번호:</label>
+      <input type="password" name="pass1" id="pass1"
+                             minlength="4" placeholder="4자리 이상"
+               class="new_pass text ui-widget-content ui-corner-all"><br>
+      <label>새 비밀번호:</label>
+      <input type="password" name="pass2" id="pass2"
+                             minlength="4" placeholder="한 번 더 넣으시오."
+               class="new_pass text ui-widget-content ui-corner-all">
+    </div>
+    <p id="tip"></p>
+  </div>
+</body>
+</html>

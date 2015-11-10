@@ -1,0 +1,16 @@
+﻿/* $Id: index.css 23863 2015-09-14 00:27:14Z 1070356 $ */
+
+body { background-color:#4E4E4E; }
+
+h1                { font-family:Arial; color:#F1F3F1; }
+button            { font-family:"견고딕"; font-weight:bolder; }
+#exit_div, #enter { position:absolute; top:13px; right:10px; }
+#exit_div         { display:none; }
+
+fieldset   { padding:0; border:0; margin:5px 0 0 0; }
+label      { display:inline-block; width:120px; text-align:right; }
+input.text { margin-bottom:5px; width:250px; padding:3px; }
+select     { margin-bottom:5px; width:258px; padding:3px; }
+#tip       { border:0; padding:0; }
+
+.ui-dialog-titlebar-close { display:none; }

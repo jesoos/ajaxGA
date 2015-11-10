@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Bootstrap 101 Template</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap -->
+  <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+<body>
+  body { padding-bottom: 70px; }
+  <script src="jquery-1.11.3.min.js"></script>
+  <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+  <nav class="navbar navbar-default navbar-fixed-top" >
+    <div>
+      <ul class="nav navbar-nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#tab-1" >탭화면 첫번째</a></li>
+        <li><a data-toggle="tab" href="#tab-2" >탭화면 두번째</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="tab-content" style="margin-top: 80px;">
+    <div class="tab-pane fade active in" id="tab-1">
+      <div class="container">
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <label class="sr-only" for="name">이름:</label>
+            <input type="name" class="form-control" id="email" placeholder="이름을 입력하세요">
+          </div>
+          <div class="form-group">
+            <label class="sr-only" for="age">나이:</label>
+            <input type="number" class="form-control" id="age" placeholder="나이를 입력하세요">
+          </div>
+          <div class="form-group">
+            <label for="male">남</label>
+            <input type="radio" name="sex" id="male" value="male">
+            <label for="female">여</label>
+            <input type="radio" name="sex" id="female" value="female">
+          </div>    
+          <button type="button" class="btn btn-primary">입력</button>
+        </form>
+      </div>
+      <p/>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-1" style="background-color:lavender;" id="col-sm1">.col-sm-1</div>
+          <div class="col-sm-6" style="background-color:lavenderblush;">.col-sm-6</div>
+          <div class="col-sm-3" style="background-color:lavender;">.col-sm-3</div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="container">
+        <nav class="navbar navbar-inverse navbar-fixed-middle">
+          <div>
+            <ul class="nav navbar-nav nav-tabs">
+              <li class="active"><a data-toggle="tab" href="#first" >탭화면 첫번째</a></li>
+              <li><a data-toggle="tab" href="#second" >탭화면 두번째</a></li>
+              <li><a data-toggle="tab" href="#third" >탭화면 마지막</a></li>
+            </ul>
+          </div>
+        </nav>
+        <div class="tab-content" style="margin-top: 80px;">
+          <div class="tab-pane fade active in" id="first">
+            <p>
+              첫번째 탭포커스가 위치할 내용입니다.<br/>
+              id="first인대 상단 네비게이션의 href속성값인 #아이디"명과 일치하는 패널이랑 맵핑을 시켜줍니다.
+            </p>
+          </div>
+          <div class="tab-pane fade" id="second">
+            <p>
+              두번째 탭포커스 위치할 내용입니다.<br/>
+              data-togge="tab"을 지정해주셔야 탭버튼으로 인식을 합니다.
+            </p>
+          </div>
+          <div class="tab-pane fade" id="third">
+            <p>
+              마지막 세번째 탭클릭시 보여지는 컨텐츠 내용입니다.
+            </p>
+          </div>
+        </div>
+      </div>  
+    </div>
+
+
+
+      <!-- 가로형 그룹버튼 -->
+      <div class="btn-group">
+        <a class="btn btn-default" >좌측</a>
+        <button class="btn btn-default">DEFAULT</button>
+        <button class="btn btn-primary">BLUE</button>
+        <button class="btn btn-success">GREEN</button>
+        <button class="btn btn-info">SKY</button>
+        <button class="btn btn-warning">YELLO</button>
+        <button class="btn btn-danger">RED</button>
+      </div>
+      <br/><br/>
+      <!-- 넓이 100% 그룹버튼 -->
+      <div class="btn-group btn-group-justified">
+        <button class="btn btn-default">DEFAULT</button>
+        <button class="btn btn-primary">BLUE</button>
+        <button class="btn btn-success">GREEN</button>
+        <button class="btn btn-info">SKY</button>
+        <button class="btn btn-warning">YELLO</button>
+        <button class="btn btn-danger">RED</button>
+      </div>
+
+      <div class="btn-group btn-group-justified" role="group" aria-label="...">
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default">Left</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default">Middle</button>
+        </div>
+        <div class="btn-group" role="group">
+          <button type="button" class="btn btn-default">Right</button>
+        </div>
+      </div>
+
+
+      <h2>Justified Button Groups</h2>
+      <div class="btn-group btn-group-justified">
+        <a href="#" class="btn btn-primary">Apple</a>
+        <a href="#" class="btn btn-primary">Samsung</a>
+        <a href="#" class="btn btn-primary">Sony</a>
+      </div>
+
+      <div class="btn-group">
+        <!-- 버튼태그 -->
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+          메뉴버튼
+          <span class="caret"></span>
+        </button>
+        <!--메뉴버튼 클릭시 하단 표출된 리스트 영역  -->
+        <ul class="dropdown-menu" >
+          <!-- 메뉴1 -->
+          <li><a href="#">메뉴1</a></li>
+          <!-- 메뉴2 -->
+          <li><a href="#">메뉴2</a></li>
+        </ul>
+      </div>
+      <div class="btn-group">
+        <!-- 추가 버튼태그 -->
+        <button class="btn btn-default" type="button">
+          메뉴버튼
+        </button>
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+          <span class="caret"></span>
+        </button>
+        <!--메뉴버튼 클릭시 하단 표출된 리스트 영역  -->
+        <ul class="dropdown-menu" >
+          <!-- 메뉴1 -->
+          <li><a href="#">메뉴1</a></li>
+          <!-- 메뉴2 -->
+          <li><a href="#">메뉴2</a></li>
+        </ul>
+      </div>
+
+      <!-- 간격을 내리고자 임의로 줄바꿈 -->
+      <br/><br/><br/><br/><br/><br/><br/><br/>
+      <div class="btn-group dropup">
+        <!-- 추가 버튼태그 -->
+        <button class="btn btn-default" type="button">
+          메뉴버튼
+        </button>
+        <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+          <span class="caret"></span>
+        </button>
+        <!--메뉴버튼 클릭시 하단 표출된 리스트 영역  -->
+        <ul class="dropdown-menu" >
+          <!-- 메뉴1 -->
+          <li><a href="#">메뉴1</a></li>
+          <!-- 메뉴2 -->
+          <li><a href="#">메뉴2</a></li>
+        </ul>
+      </div>
+
+      <button class="btn btn-default" data-target="#layerpop" data-toggle="modal">모달출력버튼</button><br/>
+      <div class="modal fade" id="layerpop" >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- header -->
+            <div class="modal-header">
+              <!-- 닫기(x) 버튼 -->
+              <button type="button" class="close" data-dismiss="modal">×</button>
+              <!-- header title -->
+              <h4 class="modal-title">Header</h4>
+            </div>
+            <!-- body -->
+            <div class="modal-body">
+              Body 
+            </div>
+            <!-- Footer -->
+            <div class="modal-footer">
+              Footer
+              <button type="button" class="btn btn-default" data-dismiss="modal">닫기</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script type="text/javascript">
+        $(function(){
+          $("#popbutton").click(function(){
+            $('div.modal').modal({remote : 'layer.html'});
+          })
+        })
+      </script>
+
+      <button class="btn btn-default" id="popbutton">모달출력버튼2</button><br/>
+      <div class="modal fade">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <!-- remote ajax call이 되는영역 -->
+          </div>
+        </div>
+      </div>
+
+    <div class="tab-pane fade" id="tab-2">
+      <p>
+        두번째 탭포커스 위치할 내용입니다.<br/>
+        data-togge="tab"을 지정해주셔야 탭버튼으로 인식을 합니다.
+      </p>
+    </div>
+  </div>
+</div>  
+
+</body>
+</html>
